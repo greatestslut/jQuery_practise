@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div id="div1">
+        <select id="sel1">
+            <option value="volvdfghfghdfghjo">Vzcdvxbdfxgolvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+        </select>
+        <select id="sel2">
+            <option value="volvdfghfghdfghjo">Vzcdvxbdfxgolvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+        </select>
+    </div>
+
+
+
+
+
+    <script>
+        var elediv = document.getElementById("div1")
+        $(function () {
+            var objResizeObserver = new ResizeObserver(function (entries) {
+                var entry = entries[0];
+                if ($("#sel2").offset().left - $("#sel1").offset().left - $("#sel1").width() > 0){
+                    console.log("-----")
+                }
+            });
+            objResizeObserver.observe(elediv);
+        });
+    </script>
+
+</body>
+
+</html>

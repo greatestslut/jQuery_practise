@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+</head>
+<body>
+  <form action="" method="post">
+    <select name="" id="first">
+      <option>Admin</option>
+      <option>Standard</option>
+      <option>Support</option>
+    </select>
+    <select name="" id="second">
+      <option>Admin</option>
+      <option>Standard</option>
+      <option>Support</option>
+    </select>
+
+  </form>
+  
+</body>
+</html>
+<script>
+  var rsb = rsb||{};
+  rsb.menu = rsb.menu || {}; 
+  rsb.menu.value = rsb.menu.value || {};
+  rsb.menu.value = {"Admin":"arcesb_admin","Standard":"arcesb_standard","Support":"arcesb_support"};
+
+  $(function(){
+    //first enumerate,second filter,then map
+    $("#first,#second").find("option").each(function (){
+      $(this).prop("value",rsb.menu.value[$(this).text()])
+    })
+  })
+
+</script>
